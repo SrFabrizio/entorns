@@ -23,7 +23,7 @@ public class MatrixDebugging {
         
         for (int i = 0; i < matrix.length; i++) {
             for (int j = 0; j < matrix[0].length; j++) {
-                transposedMatrix[i][j] = matrix[j][i]; // Error: El índice i y j están invertidos
+                transposedMatrix[j][i] = matrix[i][j];
             }
         }
 
@@ -38,7 +38,7 @@ public class MatrixDebugging {
 
         // Paso 3: Intentar acceder a un índice fuera de los límites
         try {
-            System.out.println("\nAccediendo al elemento en [3][0]: " + matrix[3][0]);
+            System.out.println("\nAccediendo al elemento en [2][0]: " + matrix[2][0]);
         } catch (ArrayIndexOutOfBoundsException e) {
             System.out.println("\nError: " + e.toString());
         }
@@ -47,8 +47,8 @@ public class MatrixDebugging {
         try {
             int sum = 0;
             // Intento de sumar los elementos de la matriz de forma incorrecta
-            for (int i = 0; i <= matrix.length; i++) {  // Error: índice fuera de límites
-                for (int j = 0; j <= matrix[i].length; j++) {  // Error: índice fuera de límites
+            for (int i = 0; i < matrix.length; i++) {  // Error: índice fuera de límites
+                for (int j = 0; j < matrix[i].length; j++) {  // Error: índice fuera de límites
                     sum += matrix[i][j];
                 }
             }
